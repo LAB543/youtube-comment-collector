@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class='container')
+    div(class='row')
+      div(class='col')
+        form(action='/', method='get' class='form-inline',)
+          div(class='form-group')
+            label(for='videoId') Video ID:
+            input(type='text', class='form-control', name='videoId', id='videoId')
+            button(type='submit', class='btn btn-primary') 댓글 추출
