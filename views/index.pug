@@ -1,11 +1,20 @@
 extends layout
 
 block content
-  div(class='container')
-    div(class='row')
-      div(class='col')
-        form(action='/', method='get' class='form-inline',)
-          div(class='form-group')
+  div.container
+    div.row
+      div.col
+        form.form-inline(action='/', method='get')
+          div.form-group
             label(for='videoId') Video ID:
-            input(type='text', class='form-control', name='videoId', id='videoId')
-            button(type='submit', class='btn btn-primary') 댓글 추출
+            input.form-control(type='text', name='videoId', id='videoId')
+            button.btn.btn-primary(type='submit') 댓글 추출
+
+    if data
+      if data.nextPageToken
+        div.row
+          div.col nextpage: true
+      div.row
+        div.col
+          each v, i in data.items
+            p= v

@@ -62,3 +62,6 @@ typings/
 
 package-lock.json
 .idea
+
+client_secret.json
+.credentials/
